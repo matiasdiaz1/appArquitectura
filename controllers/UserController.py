@@ -1,5 +1,5 @@
+# controllers/UserController.py
 from services.UserService import UserService
-
 
 class UserController:    
     @staticmethod
@@ -13,4 +13,3 @@ class UserController:
     @staticmethod
     def get_user_by_id_controller(user_id):
         return UserService.get_user_by_id(user_id)
-        

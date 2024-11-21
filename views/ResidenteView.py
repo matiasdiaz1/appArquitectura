@@ -54,4 +54,12 @@ class ResidentesView:
         # Llama al controlador para obtener un residente por su ID
         residente = ResidenteController.get_residente_by_id_controller(id_residente)
         if residente is None:
-            return jsonify({"mensaje
+            return jsonify({"mensaje": "Residente no encontrado"}), 404
+        return jsonify({
+            "id_residente": residente.id_residente,
+            "nombre": residente.nombre,
+            "apellido_paterno": residente.apellido_paterno,
+            "apellido_materno": residente.apellido_materno,
+            "num_telefono": residente.num_telefono,
+            "correo": residente.correo
+        }), 200
